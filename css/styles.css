@@ -1,0 +1,247 @@
+* {
+    color: white;
+    margin: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #1e1e1e;
+    font-size: 24px; 
+    font-family: "WaitingfortheSunrise";
+    text-shadow: 1px 1px 2px green;
+}
+
+@font-face {
+    font-family: "WaitingfortheSunrise";
+    src: url("../fonts/WaitingfortheSunrise.ttf") format("truetype");
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.title {
+    margin-bottom: 24px;
+    font-size: 28px;
+}
+
+#welcome, #gameInfo, #images, #trailers, #platformInfo {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+}
+
+/* WELCOME */
+
+#welcome {
+    background-image: url("../img/Syphilitics-04-new.jpg");
+}
+
+#welcome .outlast-logo {
+    animation: pulse 8s infinite;
+}
+
+#welcome .cover-info {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#welcome img {
+    align-self: center;
+    margin: 16px;
+}
+
+/* GAME INFO */
+
+#gameInfo {
+    background-image: url("../img/crossgif.gif");
+}
+
+/* IMAGES */
+
+#images {
+    background-image: url("../img/20191007005741_1.jpg");
+}
+
+#images .gallery {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    row-gap: 20px;
+    flex-wrap: wrap;
+}
+
+#images .gallery img {
+    background-image: url("../img/237976db7a8cb35af645830b6718e4ef.jpg");
+    background-size: cover;
+    background-color: lightgray;
+    padding: 4px;
+}
+
+#images .gallery img:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+}
+
+/* TRAILERS */
+
+#trailers {
+    background-image: url("../img/Outlast2-Canyon-1920x1080.jpg");
+}
+
+#trailers iframe {
+    width: 1280px;
+    height: 720px;
+}
+
+/* PLATFORM INFO */
+
+#platformInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-image: url('../img/DormitoryCorgan_01-new.jpg');
+}
+
+
+#platformInfo .general-info {
+    font-family: 'Lucida Sans', sans-serif;
+    text-shadow: none;
+}
+
+#platformInfo .general-info p:first-child {
+    margin-bottom: 16px;
+}
+
+#platformInfo .general-info img:last-child {
+    margin-top: 16px;
+}
+
+#platformInfo .buy-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+#platformInfo .buy-buttons a {
+    border: none;
+    border-bottom: 1px solid lightgray;
+    background-color: #d2281e;
+    padding: 16px 52px 16px 16px;
+    margin-bottom: 8px;
+    font-family: 'Lucida Sans', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    text-shadow: initial;
+}
+
+#platformInfo .buy-buttons a:hover {
+    filter: grayscale();
+    opacity: 1;
+    transition: 0.5s all;
+}
+
+/* FOOTER */
+
+#footer {
+    padding: 20px;
+    text-align: center;
+}
+
+.plot {
+    width: 80%;
+    padding: 24px;
+    background-color: #00000050;
+}
+
+@media only screen and (max-width: 1024px) {
+    #welcome .cover-info {
+        flex-direction: column;
+    }
+
+    #images .gallery {
+        width: 100%;
+    }
+
+    #images .gallery img:hover {
+        transform: scale(1);
+    }
+
+    #trailers iframe {
+        width: 640px;
+        height: 360px;
+    }
+
+    #platformInfo {
+        flex-direction: column;
+    }
+
+    #platformInfo .buy-buttons {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #trailers iframe {
+        width: 540px;
+        height: 260px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #welcome .cover-info {
+        display: none;
+    }
+
+    #gameInfo {
+        padding: 24px;
+    }
+
+    #trailers iframe {
+        width: 400px;
+        height: 220px;
+    }
+
+    #platformInfo .general-info {
+        padding: 24px;
+    }
+
+    #platformInfo .buy-buttons {
+        width: 90%;
+    }
+
+    .plot {
+        width: 95%;
+    }
+}
