@@ -96,9 +96,9 @@ a {
 #images .gallery {
     width: 80%;
     display: flex;
-    justify-content: space-around;
-    row-gap: 20px;
+    gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 #images .gallery img {
@@ -114,14 +114,33 @@ a {
 }
 
 /* TRAILERS */
-
 #trailers {
     background-image: url("../img/Outlast2-Canyon-1920x1080.jpg");
+    min-height: 100vh;
 }
 
-#trailers iframe {
-    width: 1280px;
-    height: 720px;
+#trailers .title {
+    margin: 24px 0;
+}
+
+#trailers .videoContainer {
+    display: flex;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 45.14%;
+}
+
+.videoContainer iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 80%;
+    height: 80%;
+    border: none;
 }
 
 /* PLATFORM INFO */
@@ -132,7 +151,6 @@ a {
     justify-content: space-around;
     background-image: url('../img/DormitoryCorgan_01-new.jpg');
 }
-
 
 #platformInfo .general-info {
     font-family: 'Lucida Sans', sans-serif;
@@ -167,7 +185,7 @@ a {
 }
 
 #platformInfo .buy-buttons a:hover {
-    filter: grayscale();
+    filter: grayscale(1);
     opacity: 1;
     transition: 0.5s all;
 }
@@ -190,7 +208,7 @@ a {
         flex-direction: column;
     }
 
-    #images .gallery {
+    #images .gallery img {
         width: 100%;
     }
 
@@ -198,24 +216,12 @@ a {
         transform: scale(1);
     }
 
-    #trailers iframe {
-        width: 640px;
-        height: 360px;
-    }
-
     #platformInfo {
         flex-direction: column;
     }
 
     #platformInfo .buy-buttons {
-        width: 50%;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    #trailers iframe {
-        width: 540px;
-        height: 260px;
+        width: 80%;
     }
 }
 
@@ -228,17 +234,8 @@ a {
         padding: 24px;
     }
 
-    #trailers iframe {
-        width: 400px;
-        height: 220px;
-    }
-
     #platformInfo .general-info {
         padding: 24px;
-    }
-
-    #platformInfo .buy-buttons {
-        width: 90%;
     }
 
     .plot {
